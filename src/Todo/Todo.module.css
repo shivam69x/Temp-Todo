@@ -1,0 +1,265 @@
+.pri_container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: #000026;
+    /* background-color: #ff6b6b; */
+    
+    opacity: 1;
+    background-image: radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px, #000026 0.45px);
+    background-size: 18px 18px;
+    background-position: 0 0, 9px 9px;
+}
+
+.sec_container {
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px 10px rgba(149, 149, 149, 0.397);
+    backdrop-filter: blur(10.6px);
+    -webkit-backdrop-filter: blur(10.6px);
+    border: 1px solid rgba(255, 255, 255, 0.325);
+
+    padding: 25px;
+    height: 83vh;
+    width: 420px;
+    overflow-y: auto;
+    margin-top: 35px;
+}
+
+
+.heading {
+    color: #00006e;
+    background-color: rgb(232, 228, 255);
+    border: none;
+    border-radius: 10px;
+    padding: 8px 0px 8px 0px;
+    text-align: center;
+    margin: 0px 25px 30px 25px;
+    font-weight: 700;
+    font-size: 35px;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px 19px 28px 19px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.btn_1 {
+    color: white;
+    background-color: #000860;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 8px 50px 8px 50px;
+    font-weight: 600;
+}
+
+.btn_1:hover {
+    box-shadow: 0px 0px 12px 5px rgba(255, 255, 255, 0.13);
+    animation: bounce 0.7s ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.inputbox {
+    padding: 7px 15px 7px 10px;
+    border-radius: 10px;
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
+
+        linear-gradient(to right, #000860, #e4e6ff) border-box;
+
+    border-radius: 30px;
+    border: 3.5px solid transparent;
+
+    color: #000026;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+.inputbox:hover {
+    box-shadow: 0px 0px 14px 1px rgba(255, 255, 255, 0.188), 0px 0px 4px 1px #0012d881;
+}
+
+.inputbox:focus {
+    outline: none;
+    color: #000043;
+    font-size: 23px;
+}
+
+/* -------------------<TaskDone Component>----- */
+
+.container {
+    border-radius: 12px;
+    border: 1.5px solid transparent;
+
+    background: linear-gradient(rgb(126, 131, 255), rgb(255, 255, 255)) padding-box,
+
+        linear-gradient(to right, #000860, #e4e6ff) border-box;
+
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    padding: 0px 0px 0px 0px;
+    flex-direction: column;
+}
+
+.SecContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    gap: 25px;
+    padding: 10px 0px 0px 0px;
+}
+
+.bar {
+    background-color: #0008609a;
+    color: #ffffffc8;
+    border: none;
+    border-radius: 40px;
+    font-size: 15px;
+    display: flex;
+    /* display: inline; */
+    font-weight: 500;
+    padding: 7px 15px 7px 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+.prog {
+    color: #00006e;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+}
+
+.two {
+    color: #42f283;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.Hpending {
+    color: #00006e;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    margin-top: 20px;
+}
+
+/* ---- */
+
+.ContClearAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.clearBtn {
+    background-color: rgb(210, 0, 0);
+    color: wheat;
+    border: none;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 6px 12px 6px 12px;
+    margin-top: 30px;
+}
+
+.clearBtn:hover {
+    background-color: rgb(238, 0, 0);
+}
+
+/* --------toggle---------- */
+
+.switch {
+    display: block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    top: -311px;
+    left: 243px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    ;
+   transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #303136;
+  }
+  
+  input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  }
