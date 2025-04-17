@@ -13,10 +13,12 @@ function Todoapp() {
   const [completeTask, setCompleteTask] = useState(0);
   const [PendingTask, setPendingTask] = useState(0);
 
-  // ---{Dark to light mode}--------------code--
+  // ---{Dark to light mode}----------main problem in this is here this show erroe while runing---.
 
-  // const darkMode = useRef("");
-  // darkMode.current.style.backgroundColor = "red";
+  const darkMode = useRef("");
+  darkMode.current.style.backgroundColor = "red";
+
+  // ------this lower code is rining---.
 
   // const DarkMode = useRef(null);
 
