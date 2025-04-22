@@ -13,39 +13,35 @@ function Todoapp() {
   const [completeTask, setCompleteTask] = useState(0);
   const [PendingTask, setPendingTask] = useState(0);
 
-  // ---{Dark to light mode}----------main problem in code is here this show error while Running---.
+  // ---{Dark to light mode}---------
 
-  const darkMode = useRef("");
-  darkMode.current.style.backgroundColor = "red";
+  const darkMode = useRef(null);
 
-  // ------this lower code is running---.
+  const textColor = useRef(null);
 
-  // const DarkMode = useRef(null);
+// ---------------HandleDarkMode Function & condition: 1.Light Color:-- #CFCFFF 2.Dark Color:-- #000026
+function handleDarkMode(){
+  textColor.current.style.color = "black";
 
-  // useEffect(() => {
-  //   if (DarkMode.current) {
-  //     DarkMode.current.style.backgroundColor = "#000000";
+  let bgColor = darkMode.current.style.backgroundColor
+  // darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
+  //   darkMode.current.style.backgroundSize = "18px 18px;";
+  //   darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
 
-  //     DarkMode.current.style.backgroundImage =
-  //       " radial-gradient(#555555 0.45px, transparent 0.45px),       radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
-  //     DarkMode.current.style.backgroundSize = "18px 18px;";
-  //     DarkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
-  //   }
-  // }, []);
+    if(bgColor === " #000026"){
+      darkMode.current.style.backgroundColor= "#CFCFFF";
+      darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
+      darkMode.current.style.backgroundSize = "18px 18px;";
+      darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
 
-  // const textColor = useRef("");
+    }  else{
+      darkMode.current.style.backgroundColor= "#CFCFFF";
+      darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
+      darkMode.current.style.backgroundSize = "18px 18px;";
+      darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
+    }
+}
 
-  // textColor.current.style.color = "black";
-
-  // useEffect(() => {
-  //   if (textColor.current) {
-
-  //   }
-  // }, []);
-
-  // function handleDarkMode(){
-
-  // }
 
   // ---{Dark to light mode}--------------code--
 
@@ -153,9 +149,9 @@ function Todoapp() {
   return (
     <div
       className={todocss.pri_container}
-      // ref={darkMode}
-    >
-      <label className={toggleCss.switch}>
+      ref={darkMode} >
+
+      <label className={toggleCss.switch} onClick={handleDarkMode}>
         <input type="checkbox" />
         <span className={toggleCss.slider}></span>
       </label>
@@ -183,7 +179,7 @@ function Todoapp() {
 
         <ui
           className={boxcss.items}
-          // ref={textColor}
+          ref={textColor}
         >
           {todo_task.length === 0 ? (
             <>
