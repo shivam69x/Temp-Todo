@@ -23,19 +23,19 @@ function Todoapp() {
 function handleDarkMode(){
   textColor.current.style.color = "black";
 
-  let bgColor = darkMode.current.style.backgroundColor
+  let bgColor = darkMode.current.style.backgroundColor = "black"
   // darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
   //   darkMode.current.style.backgroundSize = "18px 18px;";
   //   darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
 
-    if(bgColor === " #000026"){
-      darkMode.current.style.backgroundColor= "#CFCFFF";
+    if(bgColor){
+      darkMode.current.style.backgroundColor= "white";
       darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
       darkMode.current.style.backgroundSize = "18px 18px;";
       darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
 
     }  else{
-      darkMode.current.style.backgroundColor= "#CFCFFF";
+      darkMode.current.style.backgroundColor= "black";
       darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
       darkMode.current.style.backgroundSize = "18px 18px;";
       darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
