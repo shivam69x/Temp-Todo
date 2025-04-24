@@ -29,7 +29,6 @@
     margin-top: 35px;
 }
 
-
 .heading {
     color: #00006e;
     background-color: rgb(232, 228, 255);
@@ -217,7 +216,30 @@
     height: var(--height-of-switch);
     top: -311px;
     left: 243px;
+}
+/* 
+@media (max-width: 600px) {
+  .switch {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    margin: 0;
+    background: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  .pri_container {
+    padding-top: 60px;
+  }
+}
+ */
+
   
   /* Hide default HTML checkbox */
   .switch input {
