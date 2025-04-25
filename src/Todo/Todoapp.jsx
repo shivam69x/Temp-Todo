@@ -72,10 +72,8 @@ function Todoapp() {
   }
 
   const todo_data = JSON.parse(localStorage.getItem("todo_data")) || [
-    { Task: "Go to Class", complete: false },
-    { Task: "Go to Gym", complete: false },
-    { Task: "8'hrs of Sleep", complete: false },
-    { Task: "Eat DR Protein", complete: false },
+    { Task: "Learn React", complete: false },
+    { Task: "Do Coding", complete: false },
   ];
 
   const [todo_task, setTodo_task] = useState(todo_data);
