@@ -15,33 +15,36 @@ function Todoapp() {
 
   // ---{Dark to light mode}---------
 
+  const [isDarkMode, setIsDarkMode] = useState(true); // true = dark, false = light
   const darkMode = useRef(null);
-
   const textColor = useRef(null);
 
-// ---------------HandleDarkMode Function & condition: 1.Light Color:-- #CFCFFF 2.Dark Color:-- #000026
-function handleDarkMode(){
-  textColor.current.style.color = "black";
+  // ---------------HandleDarkMode using state
+  function handleDarkMode() {
+    setIsDarkMode((prev) => !prev);
+  }
 
-  let bgColor = darkMode.current.style.backgroundColor
-  // darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
-  //   darkMode.current.style.backgroundSize = "18px 18px;";
-  //   darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
-
-    if(bgColor === " #000026"){
-      darkMode.current.style.backgroundColor= "#CFCFFF";
-      darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
-      darkMode.current.style.backgroundSize = "18px 18px;";
-      darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
-
-    }  else{
-      darkMode.current.style.backgroundColor= "#CFCFFF";
-      darkMode.current.style.backgroundImage =" radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px,rgb(207, 207, 255) 0.45px)";
-      darkMode.current.style.backgroundSize = "18px 18px;";
-      darkMode.current.style.backgroundPosition = "0 0, 9px 9px;";
+  // Apply theme styles when isDarkMode changes
+  useEffect(() => {
+    if (!darkMode.current || !textColor.current) return;
+    if (isDarkMode) {
+      // Dark mode
+      darkMode.current.style.backgroundColor = "#CFCFFF";
+      darkMode.current.style.backgroundImage =
+        "radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px, rgb(207, 207, 255) 0.45px)";
+      darkMode.current.style.backgroundSize = "18px 18px";
+      darkMode.current.style.backgroundPosition = "0 0, 9px 9px";
+      textColor.current.style.color = "black";
+    } else {
+      // Light mode
+      darkMode.current.style.backgroundColor = "#000026";
+      darkMode.current.style.backgroundImage =
+        "radial-gradient(#555555 0.45px, transparent 0.45px), radial-gradient(#555555 0.45px, #000026 0.45px)";
+      darkMode.current.style.backgroundSize = "18px 18px";
+      darkMode.current.style.backgroundPosition = "0 0, 9px 9px";
+      textColor.current.style.color = "white";
     }
-}
-
+  }, [isDarkMode]);
 
   // ---{Dark to light mode}--------------code--
 
@@ -147,12 +150,13 @@ function handleDarkMode(){
   }
 
   return (
-    <div
-      className={todocss.pri_container}
-      ref={darkMode} >
-
-      <label className={toggleCss.switch} onClick={handleDarkMode}>
-        <input type="checkbox" />
+    <div className={todocss.pri_container} ref={darkMode}>
+      <label className={toggleCss.switch}>
+        <input
+          type="checkbox"
+          checked={!isDarkMode}
+          onChange={handleDarkMode}
+        />
         <span className={toggleCss.slider}></span>
       </label>
 
@@ -177,10 +181,7 @@ function handleDarkMode(){
           </button>
         </form>
 
-        <ui
-          className={boxcss.items}
-          ref={textColor}
-        >
+        <ui className={boxcss.items} ref={textColor}>
           {todo_task.length === 0 ? (
             <>
               <p className="text-center">No Task Found ❌</p>
