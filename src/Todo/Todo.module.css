@@ -23,10 +23,16 @@
   border: 1px solid rgba(255, 255, 255, 0.325);
 
   padding: 25px;
-  height: 83vh;
+  /* height: auto; */
+  height: 80vh;
   width: 420px;
   overflow-y: auto;
-  margin-top: 35px;
+  margin-top: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -214,9 +220,15 @@
   position: relative;
   width: var(--width-of-switch);
   height: var(--height-of-switch);
-  top: -311px;
-  left: 243px;
+  /* top: -311px;
+  left: 243px; */
   z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -308px;
+
 }
 
 /* Hide default HTML checkbox */
